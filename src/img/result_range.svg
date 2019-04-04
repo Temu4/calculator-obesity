@@ -1,0 +1,29 @@
+<svg id="background_for_the_second_table" data-name="background for the second table" xmlns="http://www.w3.org/2000/svg" width="39" height="246" viewBox="0 0 39 246">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e4323a;
+      }
+
+      .cls-2 {
+        fill: #f93;
+      }
+
+      .cls-3 {
+        fill: #2eba2e;
+      }
+
+      .cls-4 {
+        fill: #6c6;
+      }
+    </style>
+  </defs>
+  <g id="шкала">
+    <rect id="Rectangle_1205_copy_2" data-name="Rectangle 1205 copy 2" class="cls-1" width="39" height="20"/>
+    <rect id="Rectangle_1205_copy_3" data-name="Rectangle 1205 copy 3" class="cls-1" y="172" width="39" height="74"/>
+    <rect id="Rectangle_1205_copy_4" data-name="Rectangle 1205 copy 4" class="cls-2" y="135" width="39" height="38"/>
+    <rect id="Rectangle_1205_copy_7" data-name="Rectangle 1205 copy 7" class="cls-2" y="20" width="39" height="30"/>
+    <rect id="Rectangle_1205_copy_5" data-name="Rectangle 1205 copy 5" class="cls-3" y="85.28" width="39" height="49.5"/>
+    <rect id="Rectangle_1205_copy_6" data-name="Rectangle 1205 copy 6" class="cls-4" y="49.5" width="39" height="45.34"/>
+  </g>
+</svg>

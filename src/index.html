@@ -1,39 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Calculator Obesity</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-	<header>
-		<h2>Калькулятор</h2>
-	</header>
-	<main class="calculator-obesity">
-		<form active="test">
-				<legend>Калькулятор угрозы ожирения</legend>
-			<fieldset>
-				<legend>Измерения тела</legend>
-				<label><input type="radio" name="male" id="male">Мужской</label>
-				<label><input type="radio" name="female" id="female">Женский</label>
-				<br>
-				<label>Возраст<input type="number" name="age" id="age"></label>
-				<br>
-				<label>Вес<input type="number" name="weight" id="weight"></label>
-				<br>
-				<label>Рост<input type="number" name="growth" id="growth"></label>
-				<br>
-				<label>Талия<input type="number" name="waist" id="waist"></label>
-				<br>
-				<label>Грудь<input type="number" name="chest" id="chest"></label>
-				<br>
-				<label>Бедра<input type="number" name="hips" id="hips"></label>
-			</fieldset>
-			<input type="button" value="Расчитать">
+	<div class="calculator-obesity">
+		<form class="calculator-obesity__form form">
+			<legend class="form__title">Калькулятор угрозы ожирения</legend>
+			<div class="form__label">Измерения тела</div>
+			<!-- checkboxes -->
+			<div class="form__field">
+				<span class="form__checkboxes-label">Пол</span>
+				<div class="form__checkboxes">
+					<label class="check">
+						<input type="radio" name="gender" value="male" required class="check__input visually-hidden" data-type="gender" />
+						<span class="check__box"></span>
+						Мужской
+					</label>
+					<label class="check">
+						<input type="radio" name="gender" value="female" required class="check__input visually-hidden checkbox-female" data-type="gender" />
+						<span class="check__box"></span>
+						Женский
+					</label>
+				</div>
+			</div>
+			<!-- inputs -->
+			<label class="form__field">
+				Возраст
+				<input type="number" name="age" min="1" max="150" title="Введите возраст от 1 до 150" required class="form__input" data-type="age" />
+			</label>
+			<label class="form__field">
+				Вес
+				<input type="number" name="weight" min="1" max="300" title="Введите вес от 1 кг до 300 кг" required class="form__input" data-type="weight" />
+				<span class="input__units">кг</span>
+			</label>
+			<label class="form__field">
+				Рост
+				<input type="number" name="growth" min="100" max="300" title="Введите рост от 100 см до 300 см" required class="form__input"
+					data-type="height" />
+				<span class="input__units">см</span>
+			</label>
+			<label class="form__field">
+				Талия
+				<input type="number" name="waist" min="40" max="200" title="Введите окружность талии от 40 см до 200 см" required class="form__input"
+					data-type="waist" />
+				<span class="input__units">см</span>
+			</label>
+			<label class="form__field">
+				Шея
+				<input type="number" name="chest" min="20" max="80" title="Введите окружность шеи от 20 см до 80 см" required class="form__input"
+					data-type="neck" />
+				<span class="input__units">см</span>
+			</label>
+			<label class="form__field field--hip hidden">
+				Бедра
+				<input type="number" name="hips" min="40" max="200" title="Введите окружность бедер от 40 см до 200 см" required class="form__input"
+					data-type="hips" />
+				<span class="input__units">см</span>
+			</label>
+			<button class="form__button" disabled><a class="button--link" href="#calculation-result">Расчитать</a></button>
 		</form>
-	</main>
+
+		<div class="calculation-result hidden" id="calculation-result">
+			<div class="form__label">Результаты</div>
+			<div class="result__header"></div>
+			<!-- calculation range -->
+			<div class="result__range">
+				<div class="range__value">
+					<div class="range__percentage"></div>
+					<div class="range__arrow"></div>
+				</div>
+				<div class="range__img"></div>
+				<div class="range__categories">
+					<div class="category--1">1 - Эссенциальный жир</div>
+					<div class="category--2">2 - Спортсмены</div>
+					<div class="category--3">3 - Хорошая физическая форма</div>
+					<div class="category--4">4 - Норма</div>
+					<div class="category--5">5 - Ожирение</div>
+				</div>
+			</div>
+			<!-- table with calculations result -->
+			<table class="result__table"></table>
+		</div>
+	</div>
 	<script src="script.js"></script>
 </body>
+
 </html>

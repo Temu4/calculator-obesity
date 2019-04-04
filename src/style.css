@@ -1,4 +1,263 @@
-.calculator-obesity {
-	background: white;
+body {
+  margin: 0;
+  padding: 0;
 }
 
+.calculator-obesity {
+  width: 100%;
+  max-width: 400px;
+  font-family: sans-serif;
+}
+
+.form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.form__title {
+  font-size: 1.1em;
+  font-weight: bold;
+  background: rgb(243, 247, 250);
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 15px;
+}
+
+.form__label {
+  color: rgb(50, 139, 255);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.form__field {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+}
+
+.form__input {
+  width: 60%;
+  height: 35px;
+  max-width: 250px;
+  border: none;
+  background: rgb(243, 247, 250);
+  border-radius: 2px;
+  padding-left: 20px;
+}
+
+.form__input:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgb(50, 139, 255);
+}
+
+.input__units {
+  position: absolute;
+  color: rgb(128, 128, 128);
+  font-weight: normal;
+  float: right;
+  text-align: right;
+  width: 85%;
+  max-width: 340px;
+}
+
+.form__checkboxes {
+  display: flex;
+  font-weight: normal;
+}
+
+/*! Checkboxes */
+
+.check {
+  padding-left: 2.5em;
+}
+
+.check__box {
+  position: absolute;
+  margin-left: -1.8em;
+  width: 1em;
+  height: 1em;
+  background: url(img/check_box_off.png) no-repeat;
+  background-size: cover;
+}
+
+.check__input:checked+.check__box {
+  background: url(img/check_box_on.png) no-repeat;
+  background-size: cover;
+}
+
+.form__button {
+  text-transform: uppercase;
+  font-weight: bold;
+  background: rgb(50, 139, 255);
+  border: white;
+  border-radius: 2px;
+  color: white;
+  width: 180px;
+  height: 35px;
+  margin: 20px 0 30px 0;
+}
+
+.form__button:focus {
+  outline: none;
+  box-shadow: 0px 0px 7px rgb(50, 139, 255);
+}
+
+.form__button:hover {
+  opacity: 0.9;
+}
+
+.form__button:disabled {
+  background: rgb(123, 126, 131);
+}
+
+.form__button:disabled:hover {
+  opacity: 1;
+}
+
+.button--link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.form__input:valid {
+  background-color: rgba(181, 230, 181, 0.5);
+}
+
+.form__input:focus:valid {
+  box-shadow: 0px 0px 3px 1px rgba(61, 201, 61, 0.651);
+  background-color: rgba(181, 230, 181, 0.5);
+}
+
+.form__input:focus:invalid {
+  box-shadow: 0px 0px 3px rgba(221, 80, 80, 0.795);
+  background: rgba(224, 172, 172, 0.5);
+}
+
+/* .form__input:invalid {
+  background: rgba(224, 172, 172, 0.5);
+} */
+
+/*!result**/
+/**result range **/
+
+.result__header {
+  text-align: center;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.result__range {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.range__img {
+  display: block;
+  width: 50px;
+  height: 315px;
+  background: url(img/result_range.svg) no-repeat;
+  background-size: contain;
+  margin-top: 13px;
+}
+
+.range__value {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 30px;
+}
+
+.range__arrow {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid rgb(51, 51, 51);
+  margin: 0 3px;
+}
+
+.range__categories {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 290px;
+  max-width: 200px;
+  margin: 38px 0 0 20px;
+}
+
+.category--1 {
+  min-height: 40px;
+  padding-top: 10px;
+}
+
+.category--2 {
+  min-height: 35px;
+  padding-top: 10px;
+}
+
+.category--3 {
+  min-height: 50px;
+  padding-top: 10px;
+}
+
+.category--4 {
+  min-height: 50px;
+  padding-top: 10px;
+}
+
+.category--5 {
+  min-height: 40px;
+  padding-top: 15px;
+}
+
+/** table with results cereating with js**/
+.result__table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/** td with title **/
+.result__table tr td:nth-child(odd) {
+  padding: 10px 20px;
+  border-right: 2px solid rgb(248, 248, 248);
+}
+
+/** td with value **/
+.result__table tr td:nth-child(even) {
+  text-align: center;
+  padding: 10px 20px;
+  min-width: 60px;
+}
+
+.result__table .tr--odd {
+  background: rgb(241, 243, 245);
+  height: 35px;
+}
+
+/*! hide hip option if female no checked**/
+.hidden {
+  display: none;
+}
+
+/*! Hide an element from srceen (avalible for readers)**/
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
